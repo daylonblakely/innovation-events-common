@@ -1,3 +1,3 @@
 export enum Topics {
-  DealershipCreated = 'dealership:created',
+  DealershipCreated = 'dealership-created',
 }

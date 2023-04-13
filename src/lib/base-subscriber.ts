@@ -13,16 +13,21 @@ interface Event {
 export abstract class Subscriber<T extends Event> {
   abstract topic: T['topic'];
   protected client: ServiceBusClient;
+  protected subscriptionName: string;
 
-  constructor(client: ServiceBusClient) {
+  constructor(client: ServiceBusClient, subscriptionName: string) {
     this.client = client;
+    this.subscriptionName = subscriptionName;
   }
 
   subscribe(
     onMessage: (data: T['data']) => Promise<void>,
     onError?: (args: ProcessErrorArgs) => Promise<void>
   ) {
-    const reciever = this.client.createReceiver(this.topic);
+    const reciever = this.client.createReceiver(
+      this.topic,
+      this.subscriptionName
+    );
 
     reciever.subscribe({
       processMessage: (message: ServiceBusReceivedMessage) =>

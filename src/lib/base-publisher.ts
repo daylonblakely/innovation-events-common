@@ -17,7 +17,7 @@ export abstract class Publisher<T extends Event> {
   async publish(data: T['data']) {
     const sender = this.client.createSender(this.topic);
 
-    await sender.sendMessages(data);
+    await sender.sendMessages({ body: data });
     console.log('Event published to topic: ', this.topic);
   }
 }
