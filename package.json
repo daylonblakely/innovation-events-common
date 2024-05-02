@@ -1,12 +1,13 @@
 {
-  "name": "azureEvents",
-  "version": "1.0.0",
+  "name": "@db-innovation/azure-events",
+  "version": "0.0.1",
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "scripts": {
     "clean": "del-cli ./build/*",
     "build": "npm run clean && tsc",
+    "pub": "git add . && git commit -m\"Publishing Updates\" && npm version patch && npm run build && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
