@@ -19,3 +19,15 @@ import { DealershipCreatedEvent } from 'db-innovation-azure-events';
 ```
 
 Then, you can use the functions provided by the package.
+
+## Publishing to npm
+
+Before you can publish this package to npm, you need to create an npm account and log in to it in your terminal using `npm login`.
+
+Once you're logged in, you can publish the package using the publish script defined in package.json:
+
+```
+npm run publish
+```
+
+This will build the package and publish it to npm. The package name and version in your package.json must be unique in the npm registry.
