@@ -4,6 +4,9 @@
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
   "scripts": {
     "clean": "del-cli ./build/*",
     "build": "npm run clean && tsc",
@@ -11,7 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Daylon Blakely",
   "license": "ISC",
   "devDependencies": {
     "del-cli": "^5.0.0",
